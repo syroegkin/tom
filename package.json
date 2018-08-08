@@ -1,0 +1,35 @@
+{
+  "name": "tom",
+  "version": "1.0.0",
+  "scripts": {
+    "test:lint": "eslint .",
+    "test": "npm run test:lint",
+    "dev": "next",
+    "build": "NODE_ENV=production next build",
+    "start": "NODE_ENV=production node server.js",
+    "clean": "rm -rf ./.next"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/syroegkin/tom",
+  "license": "MIT",
+  "dependencies": {
+    "@material-ui/core": "^1.4.3",
+    "@material-ui/icons": "^2.0.1",
+    "jss": "^9.8.7",
+    "next": "^6.1.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-jss": "^8.6.1",
+    "styled-jsx": "^3.0.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0"
+  }
+}
