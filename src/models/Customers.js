@@ -6,11 +6,18 @@ class Customers {
 
   index = null;
 
+  averageAge = 0;
+
+  total = 0;
+
   constructor(pureData) {
     pureData.forEach(piece => {
       const customer = new Customer(piece);
       this.data.set(customer.id, customer);
+      this.age += customer.age;
     });
+    this.total = this.data.size;
+    this.age = this.age / this.total;
     this.index = lunr((obj) => {
       obj.field('about');
       obj.field('company');
