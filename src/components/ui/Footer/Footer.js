@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.primary.main,
+    clear: 'both',
   },
   copy: {
     ...theme.typography.body2,

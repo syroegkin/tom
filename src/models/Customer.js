@@ -27,8 +27,8 @@ class Customer {
     if ('greetings' in obj) this.greetings = obj.greetings;
     if ('friends' in obj) this.friends = obj.friends;
     if ('tags' in obj) this.tags = obj.tags;
-    if ('longitude' in obj) this.longitude = obj.longitude;
-    if ('latitude' in obj) this.latitude = obj.latitude;
+    if ('longitude' in obj) this.longitude = parseFloat(obj.longitude);
+    if ('latitude' in obj) this.latitude = parseFloat(obj.latitude);
     if ('registered' in obj) this.registered = Date.parse(obj.registered);
     if ('about' in obj) this.about = obj.about;
     if ('address' in obj) this.address = obj.address;
