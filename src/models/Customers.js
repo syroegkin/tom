@@ -1,13 +1,44 @@
+import lunr from 'lunr';
 import Customer from './Customer';
 
 class Customers {
-  data = [];
+  data = new Map();
+
+  index = null;
 
   constructor(pureData) {
     pureData.forEach(piece => {
       const customer = new Customer(piece);
-      this.data.push(customer);
+      this.data.set(customer.id, customer);
     });
+    this.index = lunr((obj) => {
+      obj.field('about');
+      obj.field('company');
+      obj.field('address');
+      obj.field('id');
+      obj.field('name.first');
+      obj.field('name.last');
+      obj.field('email');
+      this.toArray().forEach(contact => obj.add(contact));
+    });
+  }
+
+  search(term) {
+    const searchResults = [];
+    if (!this.index || !term) {
+      return searchResults;
+    }
+    const results = this.index.search(term);
+    if (results && results.length > 0) {
+      Object.keys(results).forEach(index => {
+        searchResults.push(this.data.get(results[index].ref));
+      });
+    }
+    return searchResults;
+  }
+
+  toArray() {
+    return Array.from(this.data.values());
   }
 }
 
