@@ -1,8 +1,8 @@
 import React from 'react';
-import Footer from '../src/components/Footer';
-import Header from '../src/components/Header';
+import Footer from '../src/components/ui/Footer';
+import Header from '../src/components/ui/Header';
 
-const Search = () =>
+const SearchPage = () =>
   <React.Fragment>
     <Header />
     <main>
@@ -11,4 +11,4 @@ const Search = () =>
     <Footer />
   </React.Fragment>;
 
-export default Search;
+export default SearchPage;

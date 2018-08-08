@@ -1,14 +1,13 @@
 import React from 'react';
-import Footer from '../src/components/Footer';
-import Header from '../src/components/Header';
+import Footer from '../src/components/ui/Footer';
+import Header from '../src/components/ui/Header';
+import Contacts from '../src/components/Contacts';
 
-const Contacts = () =>
+const ContactsPage = (props) =>
   <React.Fragment>
     <Header />
-    <main>
-      TBD
-    </main>
+    <Contacts {...props} />
     <Footer />
   </React.Fragment>;
 
-export default Contacts;
+export default ContactsPage;

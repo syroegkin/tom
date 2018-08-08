@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../src/components/Header';
-import Footer from '../src/components/Footer';
+import Header from '../src/components/ui/Header';
+import Footer from '../src/components/ui/Footer';
 
-const Index = () =>
+const IndexPage = () =>
   <React.Fragment>
     <Header />
     jo
     <Footer />
   </React.Fragment>;
 
-export default Index;
+export default IndexPage;

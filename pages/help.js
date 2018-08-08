@@ -1,8 +1,8 @@
 import React from 'react';
-import Footer from '../src/components/Footer';
-import Header from '../src/components/Header';
+import Footer from '../src/components/ui/Footer';
+import Header from '../src/components/ui/Header';
 
-const Help = () =>
+const HelpPage = () =>
   <React.Fragment>
     <Header />
     <main>
@@ -11,4 +11,4 @@ const Help = () =>
     <Footer />
   </React.Fragment>;
 
-export default Help;
+export default HelpPage;
