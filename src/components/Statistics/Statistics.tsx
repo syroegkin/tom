@@ -7,13 +7,13 @@ const Statistics = ({ pageContext: { customers } }) =>
     <li>
       <Typography variant="display1" gutterBottom>
         Average age:{' '}
-        <span>{customers.averageAge}</span>
+        <span>{customers.getAverageAge()}</span>
       </Typography>
     </li>
     <li>
       <Typography variant="display1" gutterBottom>
         Total:{' '}
-        <span>{customers.total}</span>
+        <span>{customers.getTotal()}</span>
       </Typography>
     </li>
   </ul>;

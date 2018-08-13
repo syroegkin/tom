@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "test:lint": "eslint .",
-    "test": "npm run test:lint",
+    "test:app": "jest",
+    "test": "npm run test:app && npm run test:lint",
     "dev": "next",
     "build": "NODE_ENV=production next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production next start",
     "clean": "rm -rf ./.next"
   },
   "main": "index.js",
@@ -27,16 +28,24 @@
     "styled-jsx": "^3.0.2"
   },
   "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/faker": "^4.1.2",
+    "@types/jest": "^23.3.1",
     "@types/lunr": "^2.1.6",
     "@types/next": "^6.1.2",
     "@types/prop-types": "^15.5.5",
     "@types/react": "^16.4.9",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
+    "chai": "^4.1.2",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-loader": "^2.1.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.10.0"
+    "eslint-plugin-react": "^7.10.0",
+    "faker": "^4.1.0",
+    "jest": "^23.5.0"
   }
 }

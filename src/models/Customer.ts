@@ -1,9 +1,10 @@
 import nameFactory, { Name } from './Name';
+import friendFactory, { Friend } from './Friend';
 import CustomerError from '../exception/CustomerError';
 
 export interface Customer {
-  greetings: string;
-  friends: Array<string>;
+  greeting: string;
+  friends: Array<Friend>;
   tags: Array<string>;
   longitude: number;
   latitude: number;
@@ -17,10 +18,10 @@ export interface Customer {
   eyeColor: string;
   age: number;
   picture: string;
-  balance: number;
+  balance: string;
   isActive: Boolean;
   guid: string;
-  index: string;
+  index: number;
   id: string;
 }
 
@@ -28,8 +29,8 @@ const customerFactory = (obj: any): Customer => {
   if (!obj) throw new CustomerError();
   // @todo: validate and throw more if any
   return {
-    greetings: obj.greetings,
-    friends: obj.friends,
+    greeting: obj.greetings,
+    friends: obj.friends.map((friend): Friend => friendFactory(friend)),
     tags: obj.tags,
     longitude: parseFloat(obj.longitude),
     latitude: parseFloat(obj.latitude),

@@ -22,7 +22,8 @@ class Search extends React.Component {
   render() {
     const { pageContext: { customers } } = this.props;
     const { term } = this.state;
-    const data = customers.search(term);
+    const ids: Array<string> = customers.search(term);
+    const data = ids.map(id => customers.getById(id));
 
     return (
       <React.Fragment>
