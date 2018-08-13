@@ -26,3 +26,9 @@ or
 ```
 $ npm start
 ```
+
+### Build and run docker image
+```
+docker build -t tom .
+docker run -p 3000:3000 -i -t tom
+```
