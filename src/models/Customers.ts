@@ -1,18 +1,15 @@
 import lunr from 'lunr';
-import Customer from './Customer';
+import customerFactory, { Customer } from './Customer';
 
 class Customers {
-  data = new Map();
-
-  index = null;
-
-  averageAge = 0;
-
-  total = 0;
+  data: Map<string, Customer>;
+  index: lunr.Index;
+  age: number = 0;
+  total: number = 0;
 
   constructor(pureData) {
     pureData.forEach(piece => {
-      const customer = new Customer(piece);
+      const customer: Customer = customerFactory(piece);
       this.data.set(customer.id, customer);
       this.age += customer.age;
     });
@@ -30,7 +27,7 @@ class Customers {
     });
   }
 
-  search(term) {
+  search(term: string): Array<any> {
     const searchResults = [];
     if (!this.index || !term) {
       return searchResults;
@@ -44,7 +41,7 @@ class Customers {
     return searchResults;
   }
 
-  toArray() {
+  toArray(): Array<Customer> {
     return Array.from(this.data.values());
   }
 }
